@@ -16,12 +16,12 @@
   },
   "servers": [
     {
-      "url": "http://127.0.0.1:8888",
-      "description": "Localhost"
+      "url": "https://assited.herokuapp.com",
+      "description": "Heroku server"
     },
     {
-      "url": "https://virtserver.swaggerhub.com/ComputerAssistedTest/assisted-test-api/1.0.0",
-      "description": "SwaggerHub API Auto Mocking"
+      "url": "http://127.0.0.1:8888",
+      "description": "Localhost"
     },
     {
       "url": "http://127.0.0.1:80",
