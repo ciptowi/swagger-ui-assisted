@@ -1,0 +1,2758 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Computer Assisted Test",
+    "description": "This is a API documentation for application Computer Assisted Test",
+    "termsOfService": "http://swagger.io/terms/",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "Find out more about Swagger",
+    "url": "http://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "http://127.0.0.1:8888",
+      "description": "Localhost"
+    },
+    {
+      "url": "https://virtserver.swaggerhub.com/ComputerAssistedTest/assisted-test-api/1.0.0",
+      "description": "SwaggerHub API Auto Mocking"
+    },
+    {
+      "url": "http://127.0.0.1:80",
+      "description": "Localhost 2"
+    }
+  ],
+  "tags": [
+    {
+      "name": "Admin",
+      "description": "Operations about Admin"
+    },
+    {
+      "name": "Category",
+      "description": "Operations about Category"
+    }
+  ],
+  "paths": {
+    "/admin/register": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Daftarkan admin",
+        "description": "Daftarkan admin baru",
+        "operationId": "createAdmin",
+        "requestBody": {
+          "description": "Create a new user",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/admin"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_201"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/login": {
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Login ke sistem",
+        "description": "Admin masuk ke sistem",
+        "operationId": "adminLogin",
+        "requestBody": {
+          "description": "Create a new user",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/admin"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_404"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Erorr",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/admin/update": {
+      "put": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Update user",
+        "description": "",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/admin_update_body"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "201": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_201_1"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/category/insert": {
+      "post": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Tambahkan kategori baru",
+        "description": "",
+        "operationId": "insertCategory",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/category"
+        },
+        "responses": {
+          "201": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_201_2"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/category": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Tampilkan kategori berdasarkan status",
+        "description": "",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "integer",
+              "default": 1
+            }
+          },
+          {
+            "name": "name",
+            "in": "query",
+            "description": "",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/category"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/category"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/category/{Id}": {
+      "get": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Tampilkan kategori berdasarkan id",
+        "description": "Returns a single category",
+        "operationId": "getCategoryById",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Id kategori yang dicari",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/category"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/category"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Category"
+        ],
+        "summary": "Update Kategori",
+        "description": "",
+        "operationId": "updateCategory",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Category Id",
+            "required": true,
+            "style": "simple",
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/category"
+        },
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_1"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/question/insert": {
+      "post": {
+        "tags": [
+          "Question"
+        ],
+        "summary": "Tambahkan pertanyaan baru",
+        "description": "",
+        "operationId": "insertQuestion",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/question"
+        },
+        "responses": {
+          "201": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_201_3"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/question/{status}": {
+      "get": {
+        "tags": [
+          "Question"
+        ],
+        "summary": "Tampilkan pertanyaan berdasarkan status",
+        "description": "",
+        "operationId": "getQuestionByStatus",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "path",
+            "description": "",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/question"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/question"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/question/{Id}": {
+      "get": {
+        "tags": [
+          "Question"
+        ],
+        "summary": "Tampilkan pertanyaan berdasarkan id",
+        "description": "Returns a single question",
+        "operationId": "getQuestionById",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Id pertanyaan yang dicari",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/question"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/question"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Question"
+        ],
+        "summary": "Update Question",
+        "description": "",
+        "operationId": "updateQuestion",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Question Id",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/question"
+        },
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_3"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Question"
+        ],
+        "summary": "Hapus pertanyaan",
+        "operationId": "deleteQuestion",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Question Id",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_4"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/answer/insert": {
+      "post": {
+        "tags": [
+          "Question"
+        ],
+        "summary": "Tambahkan jawaban baru",
+        "description": "",
+        "operationId": "insertAnswer",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/answer"
+        },
+        "responses": {
+          "201": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_201_4"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/answer/{question_id}": {
+      "get": {
+        "tags": [
+          "Question"
+        ],
+        "summary": "Tampilkan jawaban berdasarkan status dan pertanyaan",
+        "description": "",
+        "operationId": "getAnswerByStatusAndQuestionId",
+        "parameters": [
+          {
+            "name": "status",
+            "in": "query",
+            "description": "status jawaban",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 1
+            }
+          },
+          {
+            "name": "question_id",
+            "in": "path",
+            "description": "id pertanyaan",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/answer"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/answer"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/answer/{Id}": {
+      "get": {
+        "tags": [
+          "Question"
+        ],
+        "summary": "Tampilkan jawaban berdasarkan id",
+        "description": "mengembalikan satu jawaban",
+        "operationId": "getAnswerById",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Id jawaban yang dicari",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/answer"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/answer"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Question"
+        ],
+        "summary": "Update Jawaban",
+        "description": "",
+        "operationId": "updateAnswer",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Id jawaban yang akan diperbarui",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/answer"
+        },
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_5"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Question"
+        ],
+        "summary": "Hapus Jawaban",
+        "operationId": "deleteAnswer",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Id jawaban yang akan dihapus",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_6"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/test_session/insert": {
+      "post": {
+        "tags": [
+          "Test Session"
+        ],
+        "summary": "Tambahkan sesi ujian baru",
+        "description": "",
+        "operationId": "insertTestSession",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/test_session"
+        },
+        "responses": {
+          "201": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_201_5"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/test_session": {
+      "get": {
+        "tags": [
+          "Test Session"
+        ],
+        "summary": "Tampilkan semua sesi ujian",
+        "description": "",
+        "operationId": "getTestSession",
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/test_session"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/test_session"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/test_session/{Id}": {
+      "get": {
+        "tags": [
+          "Test Session"
+        ],
+        "summary": "Tampilkan sesi ujian berdasarkan id",
+        "description": "mengembalikan satu sesi ujian",
+        "operationId": "getTestSessionById",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Id sesi ujian yang dicari",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/test_session"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/test_session"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [
+          "Test Session"
+        ],
+        "summary": "Update sesi ujian",
+        "description": "",
+        "operationId": "updateTestSession",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Id sesi ujian yang akan diperbarui",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/test_session"
+        },
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_7"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [
+          "Test Session"
+        ],
+        "summary": "Hapus sesi ujian",
+        "operationId": "deleteTestSession",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Id sesi ujian yang akan dihapus",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_8"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/participant/insert": {
+      "post": {
+        "tags": [
+          "Participant"
+        ],
+        "summary": "Tambahkan peserta baru",
+        "description": "",
+        "operationId": "insertParticipant",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/participant"
+        },
+        "responses": {
+          "201": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_201_6"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/participant/{test_session_id}": {
+      "get": {
+        "tags": [
+          "Participant"
+        ],
+        "summary": "Tampilkan semua peserta dalam satu sesi ujian",
+        "description": "",
+        "operationId": "getParticipantByTestSessionId",
+        "parameters": [
+          {
+            "name": "test_session_id",
+            "in": "path",
+            "description": "Id sesi ujian",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/participant"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/participant"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/participant/{Id}": {
+      "get": {
+        "tags": [
+          "Participant"
+        ],
+        "summary": "Tampilkan data peserta ujian berdasarkan id",
+        "description": "mengembalikan satu data peserta",
+        "operationId": "getParticipantById",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Id peserta yang dicari",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/participant"
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "$ref": "#/components/schemas/participant"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Participant"
+        ],
+        "summary": "Update data peserta",
+        "description": "",
+        "operationId": "updateParticipnt",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Id data peserta yang akan diperbarui",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "$ref": "#/components/requestBodies/participant"
+        },
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_9"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Participant"
+        ],
+        "summary": "Hapus data peserta",
+        "operationId": "deleteParticipant",
+        "parameters": [
+          {
+            "name": "Id",
+            "in": "path",
+            "description": "Id data peserta yang akan dihapus",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_10"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/test_result/insert": {
+      "post": {
+        "tags": [
+          "Test Result"
+        ],
+        "summary": "Tambahkan hasil ujian baru",
+        "description": "",
+        "operationId": "insertTestResult",
+        "requestBody": {
+          "$ref": "#/components/requestBodies/test_result"
+        },
+        "responses": {
+          "201": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_201_7"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/test_result/{participant_id}": {
+      "get": {
+        "tags": [
+          "Test Result"
+        ],
+        "summary": "Tampilkan semua jawaban berdasarkan id peserta ujian",
+        "description": "",
+        "operationId": "getTestResultByParticipantId",
+        "parameters": [
+          {
+            "name": "participant_id",
+            "in": "path",
+            "description": "Id peserta ujian",
+            "required": true,
+            "style": "simple",
+            "explode": false,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/test_result"
+                  }
+                }
+              },
+              "application/xml": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/test_result"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "admin": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        }
+      },
+      "category": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer"
+          }
+        }
+      },
+      "question": {
+        "type": "object",
+        "properties": {
+          "admin_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "category_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "content": {
+            "type": "string"
+          }
+        }
+      },
+      "answer": {
+        "type": "object",
+        "properties": {
+          "admin_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "question_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "content": {
+            "type": "string"
+          },
+          "score": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "test_session": {
+        "type": "object",
+        "properties": {
+          "admin_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "description": {
+            "type": "string"
+          },
+          "category_id": {
+            "type": "string"
+          },
+          "time_limit": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "participant": {
+        "type": "object",
+        "properties": {
+          "test_session_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "category_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nik": {
+            "format": "string"
+          },
+          "name": {
+            "format": "string"
+          },
+          "participant_numb": {
+            "format": "string"
+          },
+          "score": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "test_result": {
+        "type": "object",
+        "properties": {
+          "participant_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "question_id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "answer_id": {
+            "type": "integer",
+            "format": "int64"
+          }
+        }
+      },
+      "inline_response_201": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Admin baru berhasil didaftarkan"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_400": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": false
+          },
+          "message": {
+            "type": "string"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_200": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Berhasil login"
+          },
+          "data": {
+            "$ref": "#/components/schemas/inline_response_200_data"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_401": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": false
+          },
+          "message": {
+            "type": "string",
+            "example": "Failed! Wrong Password"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_404": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": false
+          },
+          "message": {
+            "type": "string",
+            "example": "Failed! Username Not found"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "admin_update_body": {
+        "required": [
+          "new_password",
+          "old_password",
+          "status",
+          "username"
+        ],
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "status": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "old_password": {
+            "type": "string"
+          },
+          "new_password": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_201_1": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "User was updated successfully"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_201_2": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Kategori berhasil dibuat!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_401_1": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": false
+          },
+          "message": {
+            "type": "string",
+            "example": "Unauthorized!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_403": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": false
+          },
+          "message": {
+            "type": "string",
+            "example": "No token provided!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_200_1": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Kategori berhasil di update!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_200_2": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Kategori berhasil dihapus!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_201_3": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Pertanyaan berhasil dibuat!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_200_3": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Pertanyaan berhasil di update!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_200_4": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Pertanyaan berhasil dihapus!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_201_4": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Jawaban berhasil dibuat!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_200_5": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Jawaban berhasil diperbarui!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_200_6": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Jawaban berhasil dihapus!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_201_5": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Sesi Ujian berhasil dibuat!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_200_7": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Sesi ujian berhasil diperbarui!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_200_8": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Sesi ujian berhasil dihapus!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_201_6": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Data peserta berhasil disimpan!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_200_9": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Sesi data peserta diperbarui!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_200_10": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Data peserta berhasil dihapus!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_201_7": {
+        "type": "object",
+        "properties": {
+          "success": {
+            "type": "boolean",
+            "example": true
+          },
+          "message": {
+            "type": "string",
+            "example": "Data hasil ujian berhasil disimpan!"
+          },
+          "data": {
+            "type": "string"
+          },
+          "error": {
+            "type": "string"
+          }
+        }
+      },
+      "inline_response_200_data": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "username": {
+            "type": "string"
+          },
+          "accessToken": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "requestBodies": {
+      "category": {
+        "description": "Harus ada data kategory",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/category"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/category"
+            }
+          }
+        },
+        "required": true
+      },
+      "question": {
+        "description": "Harus ada data pertanyaan",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/question"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/question"
+            }
+          }
+        },
+        "required": true
+      },
+      "answer": {
+        "description": "Harus ada data pertanyaan dan jawaban",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/answer"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/answer"
+            }
+          }
+        },
+        "required": true
+      },
+      "test_session": {
+        "description": "Harus ada data sesi ujian",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/test_session"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/test_session"
+            }
+          }
+        },
+        "required": true
+      },
+      "participant": {
+        "description": "Harus ada data peserta",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/participant"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/participant"
+            }
+          }
+        },
+        "required": true
+      },
+      "test_result": {
+        "description": "Harus ada data hasil ujian",
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/test_result"
+            }
+          },
+          "application/xml": {
+            "schema": {
+              "$ref": "#/components/schemas/test_result"
+            }
+          }
+        },
+        "required": true
+      }
+    },
+    "securitySchemes": {
+      "api_key": {
+        "type": "apiKey",
+        "name": "Authorization",
+        "in": "header"
+      }
+    }
+  }
+}
