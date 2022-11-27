@@ -553,7 +553,7 @@
         ]
       }
     },
-    "/question/{status}": {
+    "/question": {
       "get": {
         "tags": [
           "Question"
@@ -564,15 +564,11 @@
         "parameters": [
           {
             "name": "status",
-            "in": "path",
+            "in": "query",
             "description": "",
-            "required": true,
-            "style": "simple",
             "explode": false,
             "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 1
+              "type": "integer"
             }
           }
         ],
@@ -653,8 +649,7 @@
             "style": "simple",
             "explode": false,
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "type": "integer"
             }
           }
         ],
@@ -912,7 +907,7 @@
         ]
       }
     },
-    "/answer/{question_id}": {
+    "/answer": {
       "get": {
         "tags": [
           "Question"
@@ -925,25 +920,19 @@
             "name": "status",
             "in": "query",
             "description": "status jawaban",
-            "required": true,
             "style": "form",
             "explode": true,
             "schema": {
-              "type": "integer",
-              "format": "int32",
-              "default": 1
+              "type": "integer"
             }
           },
           {
             "name": "question_id",
-            "in": "path",
+            "in": "query",
             "description": "id pertanyaan",
-            "required": true,
-            "style": "simple",
             "explode": false,
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "type": "integer"
             }
           }
         ],
@@ -1622,7 +1611,7 @@
         }
       }
     },
-    "/participant/{test_session_id}": {
+    "/participant": {
       "get": {
         "tags": [
           "Participant"
@@ -1633,10 +1622,8 @@
         "parameters": [
           {
             "name": "test_session_id",
-            "in": "path",
+            "in": "query",
             "description": "Id sesi ujian",
-            "required": true,
-            "style": "simple",
             "explode": false,
             "schema": {
               "type": "integer",
@@ -1955,7 +1942,7 @@
         }
       }
     },
-    "/test_result/{participant_id}": {
+    "/test_result": {
       "get": {
         "tags": [
           "Test Result"
@@ -1966,14 +1953,11 @@
         "parameters": [
           {
             "name": "participant_id",
-            "in": "path",
+            "in": "query",
             "description": "Id peserta ujian",
-            "required": true,
-            "style": "simple",
             "explode": false,
             "schema": {
-              "type": "integer",
-              "format": "int64"
+              "type": "integer"
             }
           }
         ],
@@ -2060,10 +2044,6 @@
       "question": {
         "type": "object",
         "properties": {
-          "admin_id": {
-            "type": "integer",
-            "format": "int64"
-          },
           "category_id": {
             "type": "integer",
             "format": "int64"
