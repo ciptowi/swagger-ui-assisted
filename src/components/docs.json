@@ -1270,7 +1270,7 @@
         ]
       }
     },
-    "/test_session/insert": {
+    "/test-session/insert": {
       "post": {
         "tags": [
           "Test Session"
@@ -1330,7 +1330,7 @@
         ]
       }
     },
-    "/test_session": {
+    "/test-session": {
       "get": {
         "tags": [
           "Test Session"
@@ -1398,7 +1398,7 @@
         ]
       }
     },
-    "/test_session/{Id}": {
+    "/test-session/{Id}": {
       "get": {
         "tags": [
           "Test Session"
@@ -1945,7 +1945,7 @@
         }
       }
     },
-    "/test_result/insert": {
+    "/test-result/insert": {
       "post": {
         "tags": [
           "Test Result"
@@ -2000,7 +2000,7 @@
         }
       }
     },
-    "/test_result": {
+    "/test-result": {
       "get": {
         "tags": [
           "Test Result"
@@ -2130,9 +2130,8 @@
       "test_session": {
         "type": "object",
         "properties": {
-          "admin_id": {
-            "type": "integer",
-            "format": "int64"
+          "pre_test_msg": {
+            "type": "string"
           },
           "description": {
             "type": "string"
@@ -2176,10 +2175,6 @@
         "type": "object",
         "properties": {
           "participant_id": {
-            "type": "integer",
-            "format": "int64"
-          },
-          "question_id": {
             "type": "integer",
             "format": "int64"
           },
