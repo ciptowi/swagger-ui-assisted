@@ -16,16 +16,12 @@
   },
   "servers": [
     {
-      "url": "https://assited.herokuapp.com",
-      "description": "Heroku server"
+      "url": "https://serverless-890.netlify.app",
+      "description": "Netlify server"
     },
     {
       "url": "http://127.0.0.1:8888",
       "description": "Localhost"
-    },
-    {
-      "url": "http://127.0.0.1:80",
-      "description": "Localhost 2"
     }
   ],
   "tags": [
@@ -190,6 +186,78 @@
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          },
+          "500": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_400"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/admin/delete": {
+      "delete": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "Hapus Akun",
+        "operationId": "deleteAcount",
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_200_6"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_401_1"
+                }
+              }
+            }
+          },
+          "403": {
+            "description": "Failed",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/inline_response_403"
                 }
               }
             }
@@ -624,12 +692,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "api_key": []
-          }
-        ]
+        }
       }
     },
     "/question/{Id}": {
@@ -699,12 +762,7 @@
               }
             }
           }
-        },
-        "security": [
-          {
-            "api_key": []
-          }
-        ]
+        }
       },
       "put": {
         "tags": [
@@ -2056,10 +2114,6 @@
       "answer": {
         "type": "object",
         "properties": {
-          "admin_id": {
-            "type": "integer",
-            "format": "int64"
-          },
           "question_id": {
             "type": "integer",
             "format": "int64"
@@ -2233,17 +2287,12 @@
         "required": [
           "new_password",
           "old_password",
-          "status",
           "username"
         ],
         "type": "object",
         "properties": {
           "username": {
             "type": "string"
-          },
-          "status": {
-            "type": "integer",
-            "format": "int32"
           },
           "old_password": {
             "type": "string"
