@@ -20,6 +20,10 @@
       "description": "Netlify server"
     },
     {
+      "url": "https://backend.psp2k.xyz",
+      "description": "Production"
+    },
+    {
       "url": "http://127.0.0.1:8888",
       "description": "Localhost"
     }
